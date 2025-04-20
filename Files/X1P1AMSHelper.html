@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Bambu Lab 多色打印购买助手</title>
+    <style>
+      body {
+          font-family: 'Segoe UI', Arial, sans-serif;
+          max-width: 800px;
+          margin: 20px 30%;
+          padding: 30px;
+          background-color: #1a1a1a;
+          color: #ffffff;
+          border-radius: 15px;
+      }
+
+      .warning {
+          color: #ff6b6b;
+          background: #2d0000;
+          padding: 12px;
+          border-radius: 8px;
+          margin: 15px 0;
+          border: 1px solid #ff4d4d;
+      }
+
+      .list {
+          margin-top: 25px;
+          background: #2d2d2d;
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      a {
+          color: #7eb4ff;
+          text-decoration: none;
+          transition: color 0.3s;
+      }
+
+      a:hover {
+          color: #a3d0ff;
+      }
+
+      .input-group {
+          margin: 15px 0;
+          padding: 10px;
+          background: #2d2d2d;
+          border-radius: 8px;
+      }
+
+      input[type="number"] {
+          width: 70px;
+          margin: 0 12px;
+          padding: 8px;
+          background: #333;
+          border: 1px solid #444;
+          color: #fff;
+          border-radius: 6px;
+          transition: all 0.3s;
+      }
+
+      input[type="number"]:focus {
+          outline: none;
+          border-color: #7eb4ff;
+          box-shadow: 0 0 8px rgba(126, 180, 255, 0.3);
+      }
+
+      input[type="checkbox"] {
+          width: 16px;
+          height: 16px;
+          accent-color: #7eb4ff;
+          margin-right: 8px;
+      }
+
+      h2 {
+          color: #7eb4ff;
+          border-bottom: 2px solid #3d3d3d;
+          padding-bottom: 10px;
+          margin-bottom: 25px;
+      }
+
+      h3 {
+          color: #9dccff;
+          margin-bottom: 15px;
+      }
+
+      ul {
+          list-style: none;
+          padding: 0;
+      }
+
+      li {
+          padding: 12px;
+          margin: 8px 0;
+          background: #333;
+          border-radius: 6px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: transform 0.2s;
+      }
+
+      li:hover {
+          transform: translateX(5px);
+          background: #3a3a3a;
+      }
+    </style>
+</head>
+<body>
+    <h1>确认多色打印需求：</h2>
+    
+    <div class="input-group">
+        AMS 购买数量<input type="number" id="ams" min="0" value="0">
+    </div>
+    <div class="input-group">
+        AMS 2 Pro 购买数量<input type="number" id="ams2pro" min="0" value="0">
+    </div>
+    <div class="input-group">
+        AMS HT 购买数量<input type="number" id="amsht" min="0" value="0">
+    </div>
+    <div class="input-group">
+        <label>
+            <input type="checkbox" id="externalSpool"> 保留外挂料盘
+        </label>
+    </div>
+
+    <div id="warning" class="warning" style="display: none"></div>
+
+    <div class="list">
+        <h1>可使用的颜色数量：</h3>
+        <ul id="ColorNumber"></ul>
+        <h1>需额外购买的配件：</h3>
+        <ul id="accessories"></ul>
+    </div>
+
+    <p><i>请注意：该 HTML 应用参考资料来自于 <a href="https://mall.jd.com/index-12045041.html">京东-拓竹官方旗舰店</a> 。虽然在发布前我们进行了仔细检查，但难免会有疏忽之处，请在下单前进行二次检查，谢谢！</i></p>
+
+
+    <script>
+        const config = {
+            accessories: [
+                {
+                    name: '4pin 线缆',
+                    link: 'https://item.jd.com/10059370500603.html',
+                    required: (ams, ams2pro, amsht, externalSpool) => 
+                        ams == 0 && (ams2pro + amsht) >= 1
+                },
+                {
+                    name: 'AMS 2 Pro 电源适配器',
+                    link: 'https://item.jd.com/10145041049074.html',
+                    required: (ams, ams2pro) => ams2pro >= 1,
+                    quantity: (ams2pro) => ams2pro
+                },
+                {
+                    name: '进料管接头',
+                    link: 'https://item.jd.com/10070883836623.html',
+                    required: (ams, ams2pro, amsht, externalSpool) => 
+                        ams == 0 && (ams2pro + amsht) >= 1 && !externalSpool
+                },
+                {
+                    name: '料管拓展口',
+                    link: 'https://item.jd.com/10093215020267.html',
+                    required: (externalSpool) => externalSpool
+                },
+                {
+                    name: '耗材缓冲器',
+                    link: 'https://item.jd.com/10060212416887.html',
+                    required: (ams, ams2pro, amsht) => 
+                        ams2pro >= 1 || amsht >= 1
+                },
+                {
+                    name: '耗材选通器',
+                    link: 'https://item.jd.com/10059378244689.html',
+                    required: (ams, ams2pro, amsht) => 
+                        (ams + ams2pro + amsht) >= 2
+                }
+            ]
+        };
+
+        function saveState() {
+            const ams = document.getElementById('ams').value;
+            const ams2pro = document.getElementById('ams2pro').value;
+            const amsht = document.getElementById('amsht').value;
+            const externalSpool = document.getElementById('externalSpool').checked;
+
+            localStorage.setItem('ams', ams);
+            localStorage.setItem('ams2pro', ams2pro);
+            localStorage.setItem('amsht', amsht);
+            localStorage.setItem('externalSpool', externalSpool);
+        }
+        function loadState() {
+            const ams = localStorage.getItem('ams') || 0;
+            const ams2pro = localStorage.getItem('ams2pro') || 0;
+            const amsht = localStorage.getItem('amsht') || 0;
+            const externalSpool = localStorage.getItem('externalSpool') === 'true';
+
+            document.getElementById('ams').value = ams;
+            document.getElementById('ams2pro').value = ams2pro;
+            document.getElementById('amsht').value = amsht;
+            document.getElementById('externalSpool').checked = externalSpool;
+        }
+
+        function updateList() {
+            const ams = parseInt(document.getElementById('ams').value) || 0;
+            const ams2pro = parseInt(document.getElementById('ams2pro').value) || 0;
+            const amsht = parseInt(document.getElementById('amsht').value) || 0;
+            const externalSpool = document.getElementById('externalSpool').checked;
+            const total = ams + ams2pro + amsht;
+
+            // 显示警告
+            const warning = document.getElementById('warning');
+            warning.style.display = total > 4 ? 'block' : 'none';
+            warning.textContent = total > 4 ? 
+                '⚠️ 警告：最多同时连接 4 台 AMS 设备！' : '';
+
+            // 计算颜色数量
+            const colorNumber = ams * 4 + ams2pro * 4 + amsht;
+            const colorNumberList = document.getElementById('ColorNumber');
+            colorNumberList.innerHTML = `<li>可用耗材槽位：${colorNumber}</li>`;
+
+            // 生成配件列表
+            let accessories = config.accessories
+                .filter(item => {
+                    if(item.name === '料管拓展口') {
+                        return item.required(externalSpool);
+                    }
+                    return item.required(ams, ams2pro, amsht, externalSpool);
+                });
+
+            // 处理缓冲器和选通器的冲突
+            if(accessories.some(i => i.name === '耗材缓冲器') && 
+               accessories.some(i => i.name === '耗材选通器')) {
+                accessories = accessories.filter(i => i.name !== '耗材缓冲器');
+            }
+
+            // 渲染列表
+            const list = document.getElementById('accessories');
+            list.innerHTML = accessories.map(item => `
+                <li>
+                    ${item.name}${item.quantity ? ` ×${item.quantity(ams2pro)}` : ''}
+                    <a href="${item.link}" target="_blank">[前往京东购买]</a>
+                </li>
+            `).join('');
+
+            saveState();
+        }
+
+        window.addEventListener('load', () => {
+            loadState();
+            updateList();
+
+            // 绑定事件监听
+            document.querySelectorAll('input').forEach(input => 
+                input.addEventListener('input', updateList));
+            document.getElementById('externalSpool').addEventListener('change', updateList);
+        });
+        
+        
+        
+    </script>
+</body>
+</html>

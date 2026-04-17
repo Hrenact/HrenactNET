@@ -4,6 +4,8 @@ import { figure } from '@mdit/plugin-figure'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lastUpdated: true,
+
   vite: { 
     optimizeDeps: { 
       exclude: [ 

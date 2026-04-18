@@ -4,7 +4,7 @@ import { figure } from '@mdit/plugin-figure'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lastUpdated: true,
+  
 
   vite: { 
     optimizeDeps: { 
@@ -60,6 +60,24 @@ export default defineConfig({
     //   message: 'Released under the CC BY-NC-SA 4.0 License.',
     //   copyright: 'Copyright © 2024-present Hrenact'
     // },
+
+    lastUpdated: {
+    text: '最后更新于',
+    formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
+
+    editLink: {
+      pattern: 'https://github.com/Hrenact/HrenactNET/edit/main/:path',
+      text: '在 GitHub 上编辑此页面'
+    },
+
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
 
     search: {
       provider: 'local'

@@ -122,13 +122,43 @@ features:
 
 <Home />
 
-## 推荐阅读
+## 第三方网站
 
-一些杂七杂八可能有所帮助的第三方网站。
+以下网站曾在我个人的开发历程中提供重要帮助，特此致谢。作为友链，这里仅作推荐与记录之用，各网站发布的内容及观点均归其自身所有，不代表我的任何意见或立场。
 
-链接 | 介绍
-:--: | :--:
-[哔哩哔哩视频下载](https://snapany.com/zh/bilibili) | 用于解析 BiliBili 视频链接来获取视频直链的网站，提供下载视频和下载封面的选项。
-[bili CDN列表总结](https://www.ouo.chat/posts/default/bili_cdn) | BiliBili 视频链接经过解析后得出的原始域名，可添加进 VRChat World Info 里的 Video Player Allowed Domains 来允许播放解析后的视频链接。
-[最全UnityHub国际版下载链接Unity2023~2017各版本+Unity5.x【间歇性更新】](https://blog.csdn.net/qq_36829186/article/details/123847081) | 收集了各个 Unity 版本下载直链并提供下载方法的网站，对国内 Unity 萌新避开 c1 版 Unity 有所帮助。
-[网易云 NCM 转 MP3](https://www.ncm2mp3.com/) | “网易云音乐文件格式转换，ncm 转 mp3，批量转换，速度飞快” 它如此写道。
+<script setup>
+const links = [
+  {
+    title: 'VRCD',
+    desc: '一个面向玩家，内容创作者与开发者的 中文VR创作社区⁄开源内容分享平台。',
+    link: 'https://vrcd.org.cn/',
+    avatar: 'https://vrcd.org.cn/favicon.ico?favicon.5b215eb2.ico'
+  },
+  {
+    title: '哔哩哔哩视频下载',
+    desc: '用于解析 BiliBili 视频链接来获取视频直链的网站，提供下载视频和下载封面的选项。',
+    link: 'https://snapany.com/zh/bilibili',
+    avatar: 'https://snapany.com//favicon.ico'
+  },
+  {
+    title: 'bili CDN列表总结',
+    desc: '列出了 B 站视频使用的 CDN 类型及其对应的 URL。',
+    link: 'https://www.ouo.chat/posts/default/bili_cdn',
+    avatar: 'https://i.ouo.chat/favicon.ico'
+  },
+  {
+    title: '最全UnityHub国际版下载链接Unity2023~2017各版本+Unity5.x【间歇性更新】',
+    desc: '收集了各个 Unity 版本下载直链并提供下载方法的网站。',
+    link: 'https://blog.csdn.net/qq_36829186/article/details/123847081',
+    avatar: 'https://g.csdnimg.cn/static/logo/favicon32.ico'
+  },
+  {
+    title: 'ncm to mp3',
+    desc: '网易云音乐文件格式转换，ncm 转 mp3，批量转换，速度飞快。',
+    link: 'https://www.ncm2mp3.com/',
+    avatar: 'https://www.ncm2mp3.com/favicon.ico'
+  },
+]
+</script>
+
+<LinkGrid :links="links" />

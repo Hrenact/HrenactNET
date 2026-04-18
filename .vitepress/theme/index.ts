@@ -34,6 +34,9 @@ import '@theojs/lumen/pic'
 import NotFound from './NotFound.vue'
 import MyFooter from './MyFooter.vue'
 
+import LinkCard from './components/LinkCard.vue'
+import LinkGrid from './components/LinkGrid.vue'
+
 // 用于评论
 
 import GiscusComment from './components/GiscusComment.vue';
@@ -61,6 +64,9 @@ export default {
     app.component('Copy', CopyText)
 
     app.component('Home', Underline)
+
+    app.component('LinkCard', LinkCard)
+    app.component('LinkGrid', LinkGrid)
 
     app.provide(InjectionKey, {
       locales: { // 配置国际化

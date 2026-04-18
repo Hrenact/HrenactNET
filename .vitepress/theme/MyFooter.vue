@@ -25,8 +25,8 @@ const currentYear = new Date().getFullYear()
 <style scoped>
 .vp-footer {
   margin-top: 24px;
-  /* padding-top: 24px; */
-  /*border-top: 1px solid var(--vp-c-divider);*/
+  padding-top: 10px;
+  border-top: 1px solid var(--vp-c-divider);
   text-align: center;
   font-size: 14px;
   color: var(--vp-c-text-2);

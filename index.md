@@ -53,6 +53,9 @@ hero:
     - theme: alt
       text: VRChat 录制动画
       link: Others/VRC2Anim
+    - theme: alt
+      text: Unity 草地铺设
+      link: Others/UnityGrass
 
 features:
   - icon: 🎨
@@ -114,6 +117,11 @@ features:
     title: VRChat 录制动画
     details: 使用 VRChat 优秀的 IK 表现录制 Unity 动画。虽然有点繁琐，但方便新手创作。
     link: Others/VRC2Anim
+    linkText: 点击查看
+  - icon: 🌿
+    title: Unity 草地铺设
+    details: 使用 Prefab Painter 2 插件快速且方便的绘制草地，完全免费且简单易用。
+    link: Others/UnityGrass
     linkText: 点击查看
   - icon: 🫤
     title: 暂无更多

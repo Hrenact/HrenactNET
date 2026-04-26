@@ -96,7 +96,7 @@ export default defineConfig({
     ],
 
     outline: {
-      level: [1, 6],
+      level: [1, 3],
       label: '页面大纲'
     },
 

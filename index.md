@@ -27,10 +27,10 @@ hero:
       text: Unity 边角料
       link: UnitySnippet/Home
     - theme: alt
-      text: BlendShapeEditor
+      text: BlendShapeEditor 文档
       link: BlendShapeEditor/Description
     - theme: alt
-      text: E-Book
+      text: E-Book 文档
       link: E-Book/HowToUse
     - theme: alt
       text: Modular Avatar 汉化文档
@@ -39,8 +39,11 @@ hero:
       text: VRC OSC Sender
       link: Others/OSCS
     - theme: alt
-      text: World Menu
+      text: World Menu 文档
       link: WorldMenu/About
+    - theme: alt
+      text: Timeline Player System 文档
+      link: TimelinePS/About
     - theme: alt
       text: Tracker 补电宝
       link: Others/TkBackupBattery
@@ -74,12 +77,12 @@ features:
     link: UnitySnippet/Home
     linkText: 点击查看
   - icon: 📏
-    title: BlendShapeEditor
+    title: BlendShapeEditor 文档
     details: 不会 Blender 又想在 Unity 内编辑和新建形态键？来试试吧！
     link: BlendShapeEditor/Description
     linkText: 点击查看
   - icon: 📖
-    title: E-Book
+    title: E-Book 文档
     details: 适用于 VRChat World 且支持数据持久化的半自动电子书插件，各种模板随心用。
     link: E-Book/HowToUse
     linkText: 点击查看
@@ -94,9 +97,14 @@ features:
     link: Others/OSCS
     linkText: 点击查看
   - icon: 📑
-    title: World Menu
+    title: World Menu 文档
     details: 适用于 VRChat World 的世界菜单插件，模块化设计且支持数据持久化。你在找的这里都有~
     link: WorldMenu/About
+    linkText: 点击查看
+  - icon: 🎆
+    title: Timeline Player System 文档
+    details: 由时间轴文本驱动的 VRChat 演出系统，支持模块化插件以及全面的 Debug 日志。
+    link: TimelinePS/About
     linkText: 点击查看
   - icon: 🔋
     title: Tracker 补电宝

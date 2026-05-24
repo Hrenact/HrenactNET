@@ -103,6 +103,7 @@ export default defineConfig({
     sidebar: [
       {
         text: '杂项',
+        collapsed: true,
         items: [
           { text: 'X1P1 AMS 购买助手', link: 'Others/X1P1AMSHelper' },
           { text: 'VRC OSC Sender', link: 'Others/OSCS' },
@@ -114,6 +115,7 @@ export default defineConfig({
       },
       {
         text: 'Unity 边角料',
+        collapsed: true,
         items: [
           { text: '概述', link: 'UnitySnippet/Home' },
           { text: '分类', link: 'UnitySnippet/Classis',
@@ -128,6 +130,7 @@ export default defineConfig({
       },
       {
         text: 'SteamVR 混搭教程',
+        collapsed: true,
         items: [
           { text: '文章前言', link: 'SteamVRMixTutorial/Preface' },
           { text: '准备工作', link: 'SteamVRMixTutorial/Preparation' },
@@ -137,14 +140,16 @@ export default defineConfig({
         ]
       },
       {
-        text: 'BlendShape Editor',
+        text: 'BlendShape Editor 文档',
+        collapsed: true,
         items: [
           { text: '插件介绍', link: 'BlendShapeEditor/Description' },
           { text: '示例流程', link: 'BlendShapeEditor/Example' },
         ]
       },
       {
-        text: 'E-Book',
+        text: 'E-Book 文档',
+        collapsed: true,
         items: [
           { text: '使用方法', link: 'E-Book/HowToUse' },
           { text: '参考资料', link: 'E-Book/Information' },
@@ -153,6 +158,7 @@ export default defineConfig({
       },
       {
         text: 'World Menu 文档',
+        collapsed: true,
         items: [
           { text: '关于 World Menu', link: 'WorldMenu/About' },
           { text: '组件参考', link: 'WorldMenu/ComponentReference',
@@ -176,7 +182,15 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Timeline Player System 文档',
+        collapsed: true,
+        items: [
+          { text: '关于 Timeline Player System', link: 'TimelinePS/About' },
+        ]
+      },
+      {
         text: 'Modular Avatar 汉化文档',
+        collapsed: true,
         items: [
           { text: '什么是 MA', link: 'MA/ModularAvatar' },
           { text: '组件参考', link: 'MA/ComponentReference',

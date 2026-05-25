@@ -185,7 +185,10 @@ export default defineConfig({
         text: 'Timeline Player System 文档',
         collapsed: true,
         items: [
-          { text: '关于 Timeline Player System', link: 'TimelinePS/About' },
+          { text: 'Timeline Player System', link: 'TimelinePS/About' },
+          { text: '何为 Timeline Text', link: 'TimelinePS/TimelineText' },
+          { text: '何为 Module', link: 'TimelinePS/Module' },
+          { text: '疑难解答', link: 'TimelinePS/QA' },
         ]
       },
       {

@@ -33,6 +33,21 @@ export default defineConfig({
   description: "个人 文档库 / Wiki 网站",
   cleanUrls: true,
 
+  locales: {
+    root: {
+      label: '简体中文',
+      lang: 'zh-CN',
+    },
+    en: {
+      label: 'English',
+      lang: 'en-US',
+    },
+    jp: {
+      label: '日本語',
+      lang: 'ja-JP',
+    },
+  },
+
   // 使用自定义域名后，不再使用子路径
   // base: '/HrenactNET/',
 

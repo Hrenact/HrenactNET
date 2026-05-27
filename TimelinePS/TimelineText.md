@@ -1,6 +1,6 @@
 ---
 prev:
-  text: '关于 Timeline Player System'
+  text: 'Timeline Player System'
   link: 'TimelinePS/About'
 next:
   text: '何为 Module'
@@ -16,16 +16,12 @@ next:
 - [mm:ss.xxx] text
 - [分:秒.毫秒] 文本
 
-其中，`text/文本` 部分的内容会随着 Module 功能而更改定义。
+其中，`text/文本` 部分的内容会随着 `Module` 功能而更改定义。
 
 例如：
 
 - 在 `LyricModule` 中，`text/文本` 为要在 `Text UI` 中显示的歌词
 - 在 `PostProcessModule` 中，`text/文本` 为要对 `Post Process Volume` 应用的权重
-
-::: warning
-Module 并不会对错误的 `Timeline Text` 格式进行拦截，这可能会导致演出出现错误。
-:::
 
 ## Timeline Text 行为
 

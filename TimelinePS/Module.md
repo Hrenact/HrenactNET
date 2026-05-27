@@ -42,27 +42,27 @@ next:
 | -- | -- |
 | <Copy type="tip" text="public void Init()" toolTip="已复制" /> | - `Core` 开始初始化时对 `Module` 所调用的方法 |
 | <Copy type="tip" text="public void OnPlay()" toolTip="已复制" /> | - `Core` 被调用 `SongStart()` 时对 `Module` 所调用的方法 |
-| <Copy type="tip" text="public void OnStop()" toolTip="已复制" /> | - `Core` 结束播放时对 `Module` 所调用的方法<br>- 加入房间时若播放已结束 `Core` 所调用的方法 |
+| <Copy type="tip" text="public void OnStop()" toolTip="已复制" /> | - `Core` 结束播放时对 `Module` 所调用的方法<br>- 加入房间时若播放已结束则 `Core` 对 `Module` 所调用的方法 |
 | <Copy type="tip" text="public void OnTimeUpdate()" toolTip="已复制" /> | - `Core` 时间更新时对 `Module` 所调用的方法 |
 
 ### 字段
 
 | 字段 | 说明
 | -- | -- |
-| <Copy type="tip" text="private bool hasSynced;" toolTip="已复制" /> | 用于在 `Module` 内部判断是否和他人同步 |
-| <Copy type="tip" text="[HideInInspector]" toolTip="已复制" /><br><Copy type="tip" text="public float currentTime;" toolTip="已复制" /> | 该字段由 `Core` 自动填入<br>`Core` 统一广播的当前播放进度/时间 |
+| <Copy type="tip" text="private bool hasSynced;" toolTip="已复制" /> | - 用于在 `Module` 内部判断是否和他人同步 |
+| <Copy type="tip" text="[HideInInspector]" toolTip="已复制" /><br><Copy type="tip" text="public float currentTime;" toolTip="已复制" /> | - 该字段由 `Core` 自动填入<br>- `Core` 统一广播的当前播放进度/时间 |
 
 ### 代码
 
 | 代码 | 说明 |
 | -- | -- |
-| <Copy type="tip" text="namespace YOURNAME" toolTip="已复制" /> | 避免名称重复而导致的代码冲突 |
-| <Copy type="tip" text="[UdonBehaviourSyncMode(BehaviourSyncMode.None)]" toolTip="已复制" /> | `Core` 已负责同步播放状态，无需二次实现
+| <Copy type="tip" text="namespace YOURNAME" toolTip="已复制" /> | - 避免名称重复而导致的代码冲突 |
+| <Copy type="tip" text="[UdonBehaviourSyncMode(BehaviourSyncMode.None)]" toolTip="已复制" /> | - `Core` 已负责同步播放状态，无需二次实现
 
 ### 日志
 
 ``` C#
-// Core 通知模块初始化时
+// Core 通知 Module 初始化时
 Debug.Log("<color=#COLOR>[ModuleName]</color> <b>" + gameObject.name + "</b> 模块开始初始化。");
 // 更新目标的值时
 Debug.Log("<color=#COLOR>[ModuleName]</color> <b>" + gameObject.name + "</b> 正在更新值，目标: <b>" + Value + "</b>");

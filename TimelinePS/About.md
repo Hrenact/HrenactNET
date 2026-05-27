@@ -11,6 +11,9 @@ next:
 
 ---
 
+- [English](https://hrenact.net/en/TimelinePS/About)
+- [日本語](https://hrenact.net/jp/TimelinePS/About)
+
 ::: warning
 此资产并非开箱即用。你需要具备一定程度的 Unity 操作经验、U# 编程知识，以及对世界构建流程的理解，才能正常且顺利地使用本资产。
 :::

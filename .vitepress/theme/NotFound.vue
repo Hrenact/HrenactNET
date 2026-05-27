@@ -1,14 +1,16 @@
 <template>
     <div class="custom-404">
     <h1 class="code-404">404</h1>
-    <p class="subtitle"><i>Something For Nothing?</i></p>
+    <p class="subtitle">o(TヘTo)</p>
 
     <div class="divider"></div>
 
     <p class="tip">
-        别担心，这可能是 CloudFlare 的问题，
-        <br>尝试使用 VPN 来访问该页面吧！
-        <br>ヾ(≧▽≦*)o
+        <br>Looking for a translated page?
+        <br>Sorry! It might just not be available!
+        <br>
+        <br>翻訳済みのページを探していますか？
+        <br>すみません！ちょうどないかもしれません！
     </p>
 
     </div>

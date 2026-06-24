@@ -174,6 +174,30 @@ const links = [
     link: 'https://www.ncm2mp3.com/',
     avatar: 'https://www.ncm2mp3.com/favicon.ico'
   },
+  {
+    title: 'Textures.com',
+    desc: 'Textures.com 为世界顶级3D艺术家提供最高品质的材质和3D资源。多数收费，部分免费。',
+    link: 'https://www.textures.com/',
+    avatar: 'https://www.textures.com/icon_180x180.376d2039520513b21c8859e65191c328.png'
+  },
+  {
+    title: 'AmbientCG',
+    desc: 'Free 3D Assets for Everyone and Everything.',
+    link: 'https://ambientcg.com/',
+    avatar: 'https://acg-media.struffelproductions.com/file/ambientCG-Web/media/icon/apple-touch-icon.png'
+  },
+  {
+    title: 'Poly Haven',
+    desc: '公共 3D 资源库。不仅免费，而且是CC0的，这意味着您可以毫无限制地将它们用于任何目的。',
+    link: 'https://polyhaven.com/zh',
+    avatar: 'https://polyhaven.com/favicon.ico'
+  },
+  {
+    title: 'Sketchfab',
+    desc: 'Publish and find 3D models online.',
+    link: 'https://sketchfab.com/',
+    avatar: 'https://static.sketchfab.com/static/builds/web/dist/static/assets/images/favicon/23f3318c19afda98ef952231b4b450c7-v2.png'
+  },
 ]
 </script>
 

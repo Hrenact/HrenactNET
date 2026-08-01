@@ -57,8 +57,8 @@ hero:
       text: VRChat 录制动画
       link: Others/VRC2Anim
     - theme: alt
-      text: Unity 草地铺设
-      link: Others/UnityGrass
+      text: 自制 SteamVR 接收器
+      link: Others/SteamVRDongle
 
 features:
   - icon: 🎨
@@ -126,10 +126,10 @@ features:
     details: 使用 VRChat 优秀的 IK 表现录制 Unity 动画。虽然有点繁琐，但方便新手创作。
     link: Others/VRC2Anim
     linkText: 点击查看
-  - icon: 🌿
-    title: Unity 草地铺设
-    details: 使用 Prefab Painter 2 插件快速且方便的绘制草地，完全免费且简单易用。
-    link: Others/UnityGrass
+  - icon: 🛜
+    title: 自制 SteamVR 接收器
+    details: 50 块钱自制一个通用的 SteamVR 接收器，教程超详细。
+    link: Others/SteamVRDongle
     linkText: 点击查看
   - icon: 🫤
     title: 暂无更多

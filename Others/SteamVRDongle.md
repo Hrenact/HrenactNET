@@ -32,12 +32,12 @@
 
 若自制接收器，请使用芯片：
 - nRF52840
-- [USB Dongle 设计参考 PCB](./Files/PCB文件-nrf52840-usb-dongle---hardware-files-2_1_1.zip)
+- [USB Dongle 设计参考 PCB](./SteamVRDongle/PCB文件-nrf52840-usb-dongle---hardware-files-2_1_1.zip)
 
 ## 固件
 
 在此处下载本教程要用到的固件压缩包：
-- [适用于 E104-BT5040U 的固件](./Files/修改完毕的刷机固件.zip)
+- [适用于 E104-BT5040U 的固件](./SteamVRDongle/修改完毕的刷机固件.zip)
 
 固件提取自 Valve Index 官方固件，仅对其中部分内容进行了修改，用于屏蔽原生固件的麦克风功能。
 

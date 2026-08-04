@@ -87,14 +87,8 @@
 
 ![Programmer 模块](/images/SteamVRDongle/Programmer.png)
 
-- 打开 E104-BT5040U 的蓝色外壳，露出里面的 PCB 板
-- PCB 的正面对应着没有标签的那面壳子，可以记一下
-
-![Programmer 模块](/images/SteamVRDongle/OpenShell.jpg)
-
-- 按住 USB 接口右下方的按钮，将接收器插入电脑。
+- 拿出我们的 E104-BT5040U，将其插入电脑。
 - 如果是台式机，优先考虑使用背面的接口
-- 接着，你会看见 PCB 的左上角有个红色小灯在缓慢闪烁，这个时候就能松手了
 - 展开 Programmer 窗口左上角的 `SELECT DEVICE` 下拉框
 - 选择我们刚刚插入的 `Open DFU Bootloader`
 
@@ -110,7 +104,9 @@
 - **刷写过程中不要拔掉 USB！！！！！！！！！**
 - 开始刷写后，会出现一个 `Nordic SDFU` 弹窗告诉你当前进度，完成后弹窗会自己消失
 
-*（这里没配图是因为截图慢了一步没截上，以后随缘补）*
+![更新中](/images/SteamVRDongle/SDFUUploading.png)
+
+![更新完成](/images/SteamVRDongle/SDFUSuccessfully.png)
 
 - 再次展开 Programmer 窗口左上角的 `SELECT DEVICE` 下拉框
 - 我们可以看见 `Open DFU Bootloader` 变成了 `Valve VR Radio`
